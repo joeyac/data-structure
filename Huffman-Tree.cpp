@@ -30,16 +30,12 @@ priority_queue<P,vector<P>,greater<P> > que;//从队列中按权值从小到大�
 //Function Declaration
 
 //初始化
-node *add(node *p,int x,char y){
-	if(p==NULL){
-		node *q=new node;
-		q->val=x;
-		q->s=y;
-		q->lson=q->rson=NULL;
-		return q;
-	}else{
-		return NULL; //非法
-	}
+node *add(int x,char y){
+		node *p=new node;
+		p->val=x;
+		p->s=y;
+		p->lson=p->rson=NULL;
+		return p;
 }
 
 //合并
@@ -111,26 +107,26 @@ int main()
 //	{
 //		char tmp='A'+i;
 //		int num=random(10000);
-//		root[i]=add(root[i],num,tmp);
+//		root[i]=add(num,tmp);
 //		que.push(P(num,root[i]));
 //	}
 	
-	root[0]=add(root[0],5,'f');
+	root[0]=add(5,'f');
 	que.push(P(5,root[0]));
 	
-	root[1]=add(root[1],9,'e');
+	root[1]=add(9,'e');
 	que.push(P(9,root[1]));
 	
-	root[2]=add(root[2],12,'c');
+	root[2]=add(12,'c');
 	que.push(P(12,root[2]));
 	
-	root[3]=add(root[3],13,'b');
+	root[3]=add(13,'b');
 	que.push(P(13,root[3]));
 	
-	root[4]=add(root[4],16,'d');
+	root[4]=add(16,'d');
 	que.push(P(16,root[4]));
 	
-	root[5]=add(root[5],45,'a');
+	root[5]=add(45,'a');
 	que.push(P(45,root[5]));
 	
 	//solve
